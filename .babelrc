@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    "extensible-destructuring",
+    "syntax-async-functions",
+    "transform-regenerator",
+    "transform-runtime"
+  ],
+  "presets": ["es2015", "stage-0"]
+}

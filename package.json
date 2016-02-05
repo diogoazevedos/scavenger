@@ -1,0 +1,54 @@
+{
+  "private": true,
+  "name": "scavenger",
+  "version": "1.0.0",
+  "description": "Web parser service",
+  "main": "app.js",
+  "scripts": {
+    "test": "tape -r babel-register tests/**/*.js",
+    "start": "node build/bundle.js",
+    "build": "webpack --optimize-minimize"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogoazevedos/scavenger.git"
+  },
+  "keywords": [
+    "scraper",
+    "cheerio",
+    "parser"
+  ],
+  "contributors": [],
+  "author": "Diogo Azevedo <diogoazevedos@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diogoazevedos/scavenger/issues"
+  },
+  "homepage": "https://github.com/diogoazevedos/scavenger#readme",
+  "dependencies": {
+    "axios": "0.9.1",
+    "babel-polyfill": "6.3.14",
+    "babel-runtime": "6.3.19",
+    "body-parser": "1.14.2",
+    "express": "4.13.4",
+    "immutable": "3.7.6",
+    "mongoose": "4.4.0",
+    "morgan": "1.6.1",
+    "passport": "0.3.2",
+    "passport-http-bearer": "1.0.1",
+    "x-ray": "2.0.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.2",
+    "babel-plugin-extensible-destructuring": "^2.0.0",
+    "babel-plugin-syntax-async-functions": "^6.3.13",
+    "babel-plugin-transform-regenerator": "^6.4.4",
+    "babel-plugin-transform-runtime": "^6.4.3",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "path": "^0.12.7",
+    "tape": "^4.4.0",
+    "webpack": "^1.12.12"
+  }
+}
