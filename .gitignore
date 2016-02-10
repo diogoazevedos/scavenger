@@ -4,10 +4,6 @@
 # Logs
 /*.log
 
-# Keys
-/key.pem
-/cert.pem
-
 # Build directory
 /build/
 

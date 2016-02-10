@@ -1,5 +1,4 @@
 const express   = require('express')
-    , https     = require('https')
     , http      = require('http')
     , app       = express()
     , morgan    = require('morgan')
@@ -18,10 +17,4 @@ app.use(morgan('dev'))
 
 app.use('/parses', require('./controllers/parses'))
 
-const options = {
-  key: fs.readFileSync('key.pem'),
-  cert: fs.readFileSync('cert.pem')
-}
-
-http.createServer(app).listen(3002)
-https.createServer(options, app).listen(3003)
+http.createServer(app).listen(process.env.PORT || 1337)
