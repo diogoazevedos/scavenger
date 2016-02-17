@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "scavenger",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Web parser service",
   "main": "app.js",
   "scripts": {
@@ -36,6 +36,8 @@
     "morgan": "1.6.1",
     "passport": "0.3.2",
     "passport-http-bearer": "1.0.1",
+    "path": "0.12.7",
+    "phantomjs": "2.1.3",
     "x-ray": "2.0.3"
   },
   "devDependencies": {
@@ -47,7 +49,6 @@
     "babel-plugin-transform-runtime": "^6.4.3",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
-    "path": "^0.12.7",
     "tape": "^4.4.0",
     "webpack": "^1.12.12"
   }

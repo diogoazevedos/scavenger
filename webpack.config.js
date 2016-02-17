@@ -13,6 +13,10 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js'
   },
+  node: {
+    __dirname: true,
+    __filename: true
+  },
   target: 'node',
   module: {
     loaders: [{

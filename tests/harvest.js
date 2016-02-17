@@ -1,8 +1,7 @@
-const test      = require('tape-expect')
+const test      = require('tape')
     , axios     = require('axios')
     , harvest   = require('../helpers/harvest')
     , Immutable = require('immutable')
-    , expect    = require('chai').expect
 
 Immutable.Iterable.prototype[Symbol.for('get')] = function(value) { return this.get(value) }
 
