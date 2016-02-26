@@ -9,10 +9,14 @@ module.exports = (source) => {
     , source
   ]
 
+  const childOpts = {
+    maxBuffer: 1024 * 1024
+  }
+
   return new Promise((resolve, reject) => {
     const binPath = phantomjs.path
-    childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
-      if (err) reject(stderr)
+    childProcess.execFile(binPath, childArgs, childOpts, function (error, stdout, stderr) {
+      if (error) reject(stderr)
 
       const response = {
         status: parseInt(stdout.substring(0, 3)),
