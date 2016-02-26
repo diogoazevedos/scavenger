@@ -14,3 +14,5 @@ page.onLoadFinished = function (status) {
   console.log(code + page.content);
   phantom.exit();
 };
+
+page.onError = function (message, trace) {};

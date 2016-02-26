@@ -4,7 +4,8 @@ const path         = require('path')
 
 module.exports = (source) => {
   const childArgs = [
-      path.resolve(__dirname, 'render.js')
+      '--load-images=false'
+    , path.resolve(__dirname, 'render.js')
     , source
   ]
 
