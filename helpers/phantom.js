@@ -18,12 +18,16 @@ module.exports = (source) => {
     childProcess.execFile(binPath, childArgs, childOpts, function (error, stdout, stderr) {
       if (error) reject(stderr)
 
-      const response = {
-        status: parseInt(stdout.substring(0, 3)),
-        data:            stdout.substring(3)
-      }
+      let status = stdout.substring(0, 3)
+      const data = stdout.substring(3)
 
-      resolve(response)
+      status = parseInt(status)
+
+      if (status === 200) {
+        resolve({ data: data, status: status })
+      } else {
+        reject({  data: data, status: status })
+      }
     })
   })
 }

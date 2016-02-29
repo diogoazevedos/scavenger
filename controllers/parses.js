@@ -1,9 +1,8 @@
 const express   = require('express')
     , router    = express.Router()
-    , axios     = require('axios')
     , auth      = require('../middlewares/auth')
+    , get       = require('../helpers/request')
     , harvest   = require('../helpers/harvest')
-    , phantom   = require('../helpers/phantom')
     , Immutable = require('immutable')
 
 router.use(auth)
@@ -13,10 +12,10 @@ router.post('/', async (request, response) => {
 
   let data, status;
 
-  if (render) {
-    ({ data, status } = await phantom(source))
-  } else {
-    ({ data, status } = await axios.get(source))
+  try {
+    ({ data, status } = await get(source, render))
+  } catch (e) {
+    ({ data, status } = e)
   }
 
   harvest(data, context, blueprint)((error, content) => {
