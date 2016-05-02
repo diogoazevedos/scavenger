@@ -16,5 +16,6 @@ app.use(parser.json())
 app.use(morgan('dev'))
 
 app.use('/parses', require('./controllers/parses'))
+app.use('/status', require('./controllers/health'))
 
 http.createServer(app).listen(process.env.PORT || 1337)
