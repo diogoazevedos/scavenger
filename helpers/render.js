@@ -1,8 +1,8 @@
 var page   = require('webpage').create();
 var system = require('system');
-var flag   = true;
-var code   = 400;
-var url    = system.args[1];
+var flag = true;
+var code = 400;
+var url  = system.args[1];
 
 page.open(url);
 

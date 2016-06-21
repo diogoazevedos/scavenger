@@ -1,9 +1,12 @@
 {
   "plugins": [
-    "extensible-destructuring",
+    [
+      "extensible-destructuring",
+      { "mode": "optout", "impl": "immutable" }
+    ],
     "syntax-async-functions",
     "transform-regenerator",
-    "transform-runtime"
+    "transform-runtime",
   ],
   "presets": ["es2015", "stage-0"]
 }

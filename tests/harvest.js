@@ -1,9 +1,6 @@
-const test      = require('tape')
-    , axios     = require('axios')
-    , harvest   = require('../helpers/harvest')
-    , Immutable = require('immutable')
-
-Immutable.Iterable.prototype[Symbol.for('get')] = function(value) { return this.get(value) }
+const test  = require('tape')
+    , axios = require('axios')
+    , harvest = require('../helpers/harvest')
 
 test('should load url content', async (x) => {
   const { data: source } = await axios.get('https://github.com/diogoazevedos')
@@ -11,7 +8,7 @@ test('should load url content', async (x) => {
   x.equal(typeof source, 'string')
 
   test('should parse a simple selector', (t) => {
-    const selector = Immutable.fromJS({ name: '.vcard-username' })
+    const selector = { name: '.vcard-username' }
 
     harvest(source, undefined, selector)((error, content) => {
       t.equal(content.name, 'diogoazevedos')
@@ -20,7 +17,7 @@ test('should load url content', async (x) => {
   })
 
   test('should parse a complex selector', (t) => {
-    const selector = Immutable.fromJS({
+    const selector = {
       name: '.vcard-username',
       repos: {
         context: '.source',
@@ -28,7 +25,7 @@ test('should load url content', async (x) => {
           name: '.repo'
         }]
       }
-    })
+    }
 
     harvest(source, undefined, selector)((error, content) => {
       t.equal(content.name, 'diogoazevedos')

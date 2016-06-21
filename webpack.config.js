@@ -8,7 +8,7 @@ fs.readdirSync('node_modules')
   .forEach(name => externals[name] = `commonjs ${name}`)
 
 module.exports = {
-  entry: path.resolve(__dirname, 'app.js'),
+  entry: path.resolve(__dirname, 'index.js'),
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js'
@@ -22,17 +22,17 @@ module.exports = {
     loaders: [{
       loader: 'babel',
       include: [
-        path.resolve(__dirname, 'app.js'),
-        path.resolve(__dirname, 'configs'),
+        path.resolve(__dirname, 'index.js'),
         path.resolve(__dirname, 'controllers'),
         path.resolve(__dirname, 'helpers'),
-        path.resolve(__dirname, 'middlewares'),
-        path.resolve(__dirname, 'models')
       ],
-      test: /\.jsx?$/,
+      test: /\.js$/,
       query: {
         plugins: [
-          'extensible-destructuring',
+          [
+            'extensible-destructuring',
+            { mode: 'optout', impl: 'immutable' }
+          ],
           'syntax-async-functions',
           'transform-regenerator',
           'transform-runtime'

@@ -1,4 +1,4 @@
-const test    = require('tape')
+const test = require('tape')
     , request = require('../helpers/request')
 
 test('should get content with success', async (t) => {

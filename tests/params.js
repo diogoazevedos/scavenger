@@ -1,4 +1,4 @@
-const test   = require('tape')
+const test = require('tape')
     , params = require('../helpers/params')
 
 test('should keep the same structure', (t) => {

@@ -1,10 +1,7 @@
-const test      = require('tape')
-    , axios     = require('axios')
-    , phantom   = require('../helpers/phantom')
-    , harvest   = require('../helpers/harvest')
-    , Immutable = require('immutable')
-
-Immutable.Iterable.prototype[Symbol.for('get')] = function(value) { return this.get(value) }
+const test  = require('tape')
+    , axios = require('axios')
+    , phantom = require('../helpers/phantom')
+    , harvest = require('../helpers/harvest')
 
 test('should get page content', async (t) => {
   const { data, status }               = await phantom('https://github.com/diogoazevedos')
@@ -12,7 +9,7 @@ test('should get page content', async (t) => {
 
   t.equal(status, code)
 
-  const selector = Immutable.fromJS({ name: '.vcard-username' })
+  const selector = { name: '.vcard-username' }
 
   harvest(source, undefined, selector)((error, content) => {
     harvest(data, undefined, selector)((err, contnt) => {

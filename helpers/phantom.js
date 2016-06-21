@@ -1,5 +1,5 @@
-const path         = require('path')
-    , phantomjs    = require('phantomjs')
+const path   = require('path')
+    , phantomjs = require('phantomjs')
     , childProcess = require('child_process')
 
 module.exports = (source) => {

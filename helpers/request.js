@@ -1,5 +1,5 @@
-const axios    = require('axios')
-    , phantom  = require('./phantom')
+const axios = require('axios')
+    , phantom = require('./phantom')
 
 module.exports = (source, render) => {
   if (render) {
