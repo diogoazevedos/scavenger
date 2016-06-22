@@ -1,13 +1,31 @@
-const app  = require('express')()
-    , http = require('http')
-    , morgan = require('morgan')
-    , parser = require('body-parser')
+import express from 'express'
+import { createServer } from 'http'
+import morgan from 'morgan'
+import { json, urlencoded } from 'body-parser'
+import harvest from './lib/harvest'
+import request from './lib/request'
 
-app.use(parser.urlencoded({ extended: true }))
-app.use(parser.json())
+const app = express()
+
+app.use(urlencoded({ extended: true }))
+app.use(json())
 app.use(morgan('dev'))
 
-app.use('/harvests', require('./controllers/harvests'))
-app.use('/checks', require('./controllers/checks'))
+app.get('/checks', (req, res) => res.send())
+app.post('/harvests', async (req, res) => {
+  const { render, source, context, selector } = req.body
 
-http.createServer(app).listen(process.env.PORT || 1337)
+  let data, status;
+
+  try {
+    ({ data, status } = await request(source, render))
+  } catch (e) {
+    ({ data, status } = e)
+  }
+
+  harvest(data, context, selector)((error, content) => {
+    res.status(status).json(content)
+  })
+})
+
+createServer(app).listen(process.env.PORT || 1337)

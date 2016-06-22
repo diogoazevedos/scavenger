@@ -23,8 +23,7 @@ module.exports = {
       loader: 'babel',
       include: [
         path.resolve(__dirname, 'index.js'),
-        path.resolve(__dirname, 'controllers'),
-        path.resolve(__dirname, 'helpers'),
+        path.resolve(__dirname, 'lib'),
       ],
       test: /\.js$/,
       query: {
