@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "scavenger",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Web parser service",
   "main": "index.js",
   "scripts": {
