@@ -1,5 +1,9 @@
 # Scavenger
 
+[![Build Status](https://img.shields.io/travis/diogoazevedos/scavenger/master.svg)](https://travis-ci.org/diogoazevedos/scavenger)
+[![Dependency Status](https://img.shields.io/david/diogoazevedos/scavenger.svg)](https://david-dm.org/diogoazevedos/scavenger)
+[![devDependency Status](https://img.shields.io/david/dev/diogoazevedos/scavenger.svg)](https://david-dm.org/diogoazevedos/scavenger#info=devDependencies)
+
 Scavenger is an open-source web parser service.
 
 ### Getting started
