@@ -1,16 +1,15 @@
-const webpack = require('webpack')
-    , path    = require('path')
-    , fs      = require('fs')
+const { resolve } = require('path'),
+      { readdirSync } = require('fs')
 
 const externals = {}
-fs.readdirSync('node_modules')
+readdirSync('node_modules')
   .filter(folder => ['.bin'].indexOf(folder) === -1)
   .forEach(name => externals[name] = `commonjs ${name}`)
 
 module.exports = {
-  entry: path.resolve(__dirname, 'index.js'),
+  entry: resolve(__dirname, 'index.js'),
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: resolve(__dirname, 'build'),
     filename: 'bundle.js'
   },
   node: {
@@ -22,8 +21,8 @@ module.exports = {
     loaders: [{
       loader: 'babel',
       include: [
-        path.resolve(__dirname, 'index.js'),
-        path.resolve(__dirname, 'lib'),
+        resolve(__dirname, 'index.js'),
+        resolve(__dirname, 'lib'),
       ],
       test: /\.js$/,
       query: {
@@ -39,7 +38,7 @@ module.exports = {
         presets: ['es2015', 'stage-0']
       },
       exclude: [
-        path.resolve(__dirname, 'node_modules')
+        resolve(__dirname, 'node_modules')
       ]
     }]
   },
