@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "scavenger",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Web parser service",
   "main": "index.js",
   "scripts": {
@@ -26,16 +26,16 @@
   },
   "homepage": "https://github.com/diogoazevedos/scavenger#readme",
   "dependencies": {
-    "axios": "0.12.0",
-    "babel-polyfill": "6.9.1",
-    "babel-runtime": "6.9.2",
+    "axios": "0.13.1",
+    "babel-polyfill": "6.13.0",
+    "babel-runtime": "6.11.6",
     "body-parser": "1.15.2",
     "express": "4.14.0",
     "extensible-runtime": "4.0.1",
     "immutable": "3.8.1",
     "morgan": "1.7.0",
     "path": "0.12.7",
-    "phantomjs-prebuilt": "2.1.7",
+    "phantomjs-prebuilt": "2.1.10",
     "x-ray": "2.3.0"
   },
   "devDependencies": {
