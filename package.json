@@ -35,11 +35,11 @@
     "immutable": "3.8.1",
     "morgan": "1.7.0",
     "path": "0.12.7",
-    "phantomjs-prebuilt": "2.1.10",
+    "phantomjs-prebuilt": "2.1.12",
     "x-ray": "2.3.0"
   },
   "devDependencies": {
-    "ava": "^0.15.2",
+    "ava": "^0.16.0",
     "babel-core": "^6.7.7",
     "babel-loader": "^6.2.4",
     "babel-plugin-extensible-destructuring": "^4.0.1",
