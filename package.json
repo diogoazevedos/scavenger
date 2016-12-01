@@ -26,20 +26,20 @@
   },
   "homepage": "https://github.com/diogoazevedos/scavenger#readme",
   "dependencies": {
-    "axios": "0.13.1",
-    "babel-polyfill": "6.13.0",
-    "babel-runtime": "6.11.6",
+    "axios": "0.15.3",
+    "babel-polyfill": "6.16.0",
+    "babel-runtime": "6.18.0",
     "body-parser": "1.15.2",
     "express": "4.14.0",
     "extensible-runtime": "4.0.1",
     "immutable": "3.8.1",
     "morgan": "1.7.0",
     "path": "0.12.7",
-    "phantomjs-prebuilt": "2.1.12",
-    "x-ray": "2.3.0"
+    "phantomjs-prebuilt": "2.1.13",
+    "x-ray": "2.3.1"
   },
   "devDependencies": {
-    "ava": "^0.16.0",
+    "ava": "^0.17.0",
     "babel-core": "^6.7.7",
     "babel-loader": "^6.2.4",
     "babel-plugin-extensible-destructuring": "^4.0.1",
