@@ -1,6 +1,7 @@
 # Scavenger
 
 [![Build Status](https://img.shields.io/travis/diogoazevedos/scavenger/master.svg)](https://travis-ci.org/diogoazevedos/scavenger)
+[![Coverage Status](https://img.shields.io/coveralls/diogoazevedos/scavenger.svg)](https://coveralls.io/github/diogoazevedos/scavenger)
 [![Dependency Status](https://img.shields.io/david/diogoazevedos/scavenger.svg)](https://david-dm.org/diogoazevedos/scavenger)
 [![devDependency Status](https://img.shields.io/david/dev/diogoazevedos/scavenger.svg)](https://david-dm.org/diogoazevedos/scavenger#info=devDependencies)
 
